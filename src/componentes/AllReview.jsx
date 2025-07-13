@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 export default function AllReview() {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews`)
+        fetch(`https://college-app-server-beta.vercel.app/reviews`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [])
