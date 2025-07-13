@@ -38,7 +38,7 @@ export default function AuthProvider({ children }) {
         const unSubscribe = onAuthStateChanged(auth, async currentUser => {
             if (currentUser && currentUser?.photoURL) {
                 // api Call
-                const { data } = await axios.post(`http://localhost:5000/users/${currentUser?.email}`, {
+                const { data } = await axios.post(`https://college-app-server-beta.vercel.app/users/${currentUser?.email}`, {
 
                     name: currentUser?.displayName,
                     image: currentUser?.photoURL,

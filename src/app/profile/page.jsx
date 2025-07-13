@@ -9,7 +9,7 @@ export default function profilePage() {
   const { user } = useContext(AuthContext);
   const [users, setUser] = useState({})
   useEffect(() => {
-    fetch(`http://localhost:5000/users/${user?.email}`)
+    fetch(`https://college-app-server-beta.vercel.app/users/${user?.email}`)
       .then(res => res.json())
       .then(data => setUser(data))
   }, [user])
@@ -22,7 +22,7 @@ export default function profilePage() {
     const address = e.target.address.value
     const updateData = { name, email, university, address }
     try {
-      const { data } = await axios.put(`http://localhost:5000/update/${user?.email}`, updateData)
+      const { data } = await axios.put(`https://college-app-server-beta.vercel.app/update/${user?.email}`, updateData)
       mutate()
       console.log(data)
       // if (data.insertedId) {

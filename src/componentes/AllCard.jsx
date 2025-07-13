@@ -9,7 +9,7 @@ export default function AllCard() {
     const [search, setSearch] = useState('')
 
           useEffect(() => {
-             fetch(`http://localhost:5000/college?search=${search}`)
+             fetch(`https://college-app-server-beta.vercel.app/college?search=${search}`)
                  .then(res => res.json())
                  .then(data => setColleges(data))
          }, [search])

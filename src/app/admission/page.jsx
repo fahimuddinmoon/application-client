@@ -9,7 +9,7 @@ export default function admissionPage() {
 
   const [colleges, setColleges] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:5000/college`)
+    fetch(`https://college-app-server-beta.vercel.app/college`)
       .then(res => res.json())
       .then(data => setColleges(data))
   }, [])
@@ -29,7 +29,7 @@ export default function admissionPage() {
       { candidateName, subject, candidateAddress, candidateNumber, candidateEmail, candidatePhoto, Birth }
 
     try {
-      const { data } = await axios.post('http://localhost:5000/apply', candidateData)
+      const { data } = await axios.post('https://college-app-server-beta.vercel.app/apply', candidateData)
       if (data.insertedId) {
         Swal.fire({
           title: "Apply Successfully!",

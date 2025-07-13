@@ -9,7 +9,7 @@ export default function page({ params }) {
     const { user } = useContext(AuthContext);
     const { id } = use(params)
     useEffect(() => {
-        fetch(`http://localhost:5000/apply/${id}`)
+        fetch(`https://college-app-server-beta.vercel.app/apply/${id}`)
             .then(res => res.json())
             .then(data => setApply(data))
     }, [id])
@@ -24,7 +24,7 @@ export default function page({ params }) {
             photo: user?.photoURL
         }
         try {
-            const { data } = await axios.post('http://localhost:5000/reviews', reviewData)
+            const { data } = await axios.post('https://college-app-server-beta.vercel.app/reviews', reviewData)
             if (data.insertedId) {
                 Swal.fire({
                     title: "Review Posted Successfully!",

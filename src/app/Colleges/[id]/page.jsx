@@ -9,7 +9,7 @@ export default function page({ params }) {
   const { id } = use(params);
   const [college, setCollege] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:5000/college/${id}`)
+    fetch(`https://college-app-server-beta.vercel.app/college/${id}`)
       .then(res => res.json())
       .then(data => setCollege(data))
   }, [id])

@@ -5,7 +5,7 @@ import React, { useEffect, useState } from 'react'
 export default function collegePage() {
   const [colleges, setColleges] = useState([])
   useEffect(() => {
-    fetch(`http://localhost:5000/college`)
+    fetch(`https://college-app-server-beta.vercel.app/college`)
       .then(res => res.json())
       .then(data => setColleges(data))
   }, [])

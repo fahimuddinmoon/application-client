@@ -33,7 +33,7 @@ export default function addCollegesPage() {
         const collegeData =
             { CollegeName, location, CollegePhoto, eventDetails, researchWork, sportsCategories, deadline, ResearchWorkPhoto, SuccessfulStudentsPhoto }
         try {
-            const { data } = await axios.post('http://localhost:5000/college', collegeData)
+            const { data } = await axios.post('https://college-app-server-beta.vercel.app/college', collegeData)
             if (data.insertedId) {
                 Swal.fire({
                     title: "College Added Successfully!",

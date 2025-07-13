@@ -9,7 +9,7 @@ export default function myCollegePage() {
   const [Applys, setApply] = useState([])
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/applied/${user?.email}`)
+    fetch(`https://college-app-server-beta.vercel.app/applied/${user?.email}`)
       .then(res => res.json())
       .then(data => setApply(data))
   }, [user])
